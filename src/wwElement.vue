@@ -11,31 +11,33 @@
 
 <script>
 import { BryntumCalendar } from '@bryntum/calendar-vue-3';
-import { useCalendarConfig } from '@/AppConfig';
+import { useCalendarConfig } from './AppConfig';
 
 export default {
   props: {
     content: { type: Object, required: true },
+    wwFrontState: { type: Object },
+    wwUtils: { type: Object },
   },
   
   components: {
     BryntumCalendar
   },
 
-  setup() {
-    const calendarConfig = useCalendarConfig();
-    return { calendarConfig };
-  },
-
   computed: {
     calendarConfig() {
       return {
-        ...useCalendarConfig(),
+        ...useCalendarConfig.call(this),
         autoLoad: true,
         transport: {
           load: {
-            url: 'data/data.json',
+            url: this.wwUtils.getPublicUrl('data/data.json'),
             data: this.content
+          }
+        },
+        listeners: {
+          beforeEventEdit: ({ eventRecord }) => {
+            this.wwUtils.onEdit({ id: eventRecord.id });
           }
         }
       };

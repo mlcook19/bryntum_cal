@@ -1,7 +1,7 @@
 {
-  "name": "basic",
-  "description": "Basic setup demo (Vue 3)",
-  "version": "6.2.0-alpha-1",
+  "name": "weweb-bryntum-calendar",
+  "description": "Bryntum Calendar WeWeb Component",
+  "version": "1.0.0",
   "author": {
     "name": "Bryntum",
     "url": "https://bryntum.com",
@@ -20,13 +20,13 @@
     "node_modules/@bryntum/demo-resources/images/favicon.png": "copy public/favicon.png"
   },
   "dependencies": {
-    "@bryntum/calendar": "npm:@bryntum/calendar-trial@6.2.0-alpha-1",
-    "@bryntum/calendar-vue-3": "6.2.0-alpha-1",
-    "@bryntum/demo-resources": "1.4.0",
-    "core-js": "3.8.3",
-    "vue": "3.2.13"
+    "@bryntum/calendar": "latest",
+    "@bryntum/calendar-vue-3": "latest",
+    "@bryntum/demo-resources": "latest",
+    "core-js": "^3.8.3"
   },
   "devDependencies": {
+    "@weweb/cli": "latest",
     "@babel/core": "7.12.16",
     "@babel/eslint-parser": "7.12.16",
     "@vue/cli-plugin-babel": "5.0.0",
