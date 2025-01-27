@@ -8,17 +8,19 @@ export default {
     initialDate: {
       label: { en: "Initial Date" },
       type: "Date",
-      defaultValue: new Date(),
+      defaultValue: new Date(2020, 9, 12),
     },
-    events: {
-      label: { en: "Events Data" },
-      type: "Array",
-      defaultValue: [],
-    },
-    resources: {
-      label: { en: "Resources Data" },
-      type: "Array", 
-      defaultValue: [],
+    viewMode: {
+      label: { en: "Default View Mode" },
+      type: "Enum",
+      options: {
+        items: [
+          { label: "Day", value: "day" },
+          { label: "Week", value: "week" },
+          { label: "Month", value: "month" }
+        ],
+      },
+      defaultValue: "week",
     }
   },
 }; 
